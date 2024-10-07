@@ -1,0 +1,120 @@
+{
+  "data": [
+    {
+      "test_case_id": 1,
+      "test_case": "Successful user creation",
+      "endpoint": "/api/v1/users",
+      "method": "POST",
+      "token": "",
+      "request_body": {
+        "name": "John Doe",
+        "email": "johndoe@example.com",
+        "password": "securePassword123"
+      },
+      "status_code": 200,
+      "expected_result": {
+        "status": "success",
+        "userId": "12345",
+        "message": "User created successfully"
+      }
+    },
+    {
+      "test_case_id": 2,
+      "test_case": "Missing name in request",
+      "endpoint": "/api/v1/users",
+      "method": "POST",
+      "token": "",
+      "request_body": {
+        "email": "johndoe@example.com",
+        "password": "securePassword123"
+      },
+      "status_code": 400,
+      "expected_result": {
+        "error": "Name is required"
+      }
+    },
+    {
+      "test_case_id": 3,
+      "test_case": "Invalid email format",
+      "endpoint": "/api/v1/users",
+      "method": "POST",
+      "token": "",
+      "request_body": {
+        "name": "John Doe",
+        "email": "invalidemail",
+        "password": "securePassword123"
+      },
+      "status_code": 400,
+      "expected_result": {
+        "error": "Invalid email format"
+      }
+    },
+    {
+      "test_case_id": 4,
+      "test_case": "Weak password",
+      "endpoint": "/api/v1/users",
+      "method": "POST",
+      "token": "",
+      "request_body": {
+        "name": "John Doe",
+        "email": "johndoe@example.com",
+        "password": "weak"
+      },
+      "status_code": 400,
+      "expected_result": {
+        "error": "Password must contain at least 8 characters including numbers, uppercase and lowercase letters"
+      }
+    }
+    ,
+    {
+      "test_case_id": 1,
+      "test_case": "Successful user creation",
+      "endpoint": "/api/v1/users",
+      "method": "POST",
+      "token": "",
+      "request_body": {
+        "name": "John Doe",
+        "email": "johndoe@example.com",
+        "password": "securePassword123"
+      },
+      "status_code": 200,
+      "expected_result": {
+        "status": "success",
+        "userId": "12345",
+        "message": "User created successfully"
+      }
+    },
+    {
+      "test_case_id": 2,
+      "test_case": "Missing name in request",
+      "endpoint": "/api/v1/users",
+      "method": "POST",
+      "token": "",
+      "request_body": {
+        "email": "johndoe@example.com",
+        "password": "securePassword123"
+      },
+      "status_code": 400,
+      "expected_result": {
+        "error": "Name is required"
+      }
+    },
+
+    {
+      "test_case_id": 4,
+      "test_case": "Weak password",
+      "endpoint": "/api/v1/users",
+      "method": "POST",
+      "token": "",
+      "request_body": {
+        "name": "John Doe",
+        "email": "johndoe@example.com",
+        "password": "weak"
+      },
+      "status_code": 500,
+      "expected_result": {
+        "error": "Password must contain at least 8 characters including numbers, uppercase and lowercase letters"
+      }
+    }
+  ]
+}
